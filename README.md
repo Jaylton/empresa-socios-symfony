@@ -25,15 +25,15 @@ Antes de começar, certifique-se de que você tem o seguinte instalado em sua m�
 - [Node.js](https://nodejs.org/) (opcional, para desenvolvimento fora do Docker)
 
 ## Estrutura do Projeto
-/vox-test ├── /backend (Symfony API) ├── /frontend (Angular) ├── docker-compose.yml
+/empresa-socios-symfony ├── /backend (Symfony API) ├── /frontend (Angular) ├── docker-compose.yml
 
 ## Como Rodar a Aplicação
 
 1. **Clone o repositório**
 
    ```sh
-   git clone https://gitlab.com/jaylton-a1/vox-test.git
-   cd vox-test
+   git clone https://github.com/Jaylton/empresa-socios-symfony.git
+   cd empresa-socios-symfony
    ```
 
 2. **Construir e rodar os containers**
