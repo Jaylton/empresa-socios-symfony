@@ -1,0 +1,297 @@
+{
+	"info": {
+		"_postman_id": "9d4fe15a-dd6f-45ae-95cf-976244538784",
+		"name": "php-symfony",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3548410"
+	},
+	"item": [
+		{
+			"name": "empresa",
+			"item": [
+				{
+					"name": "Create empresa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Empresa 2\",\r\n    \"cnpj\": \"12345678098745\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/empresa/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"empresa",
+								"new"
+							]
+						},
+						"description": "Criar uma empresa"
+					},
+					"response": []
+				},
+				{
+					"name": "Get empresas",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Empresa 1\",\r\n    \"cnpj\": \"12345678998745\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/empresa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"empresa"
+							]
+						},
+						"description": "Get empresas"
+					},
+					"response": []
+				},
+				{
+					"name": "Get empresa by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Empresa 1\",\r\n    \"cnpj\": \"12345678998745\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/empresa/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"empresa",
+								"1"
+							]
+						},
+						"description": "Get empresa pelo id"
+					},
+					"response": []
+				},
+				{
+					"name": "Update empresa",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Empresa 1 edited\",\r\n    \"cnpj\": \"12345678998745\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/empresa/1/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"empresa",
+								"1",
+								"edit"
+							]
+						},
+						"description": "Alterar empresa"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete empresa by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/empresa/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"empresa",
+								"2"
+							]
+						},
+						"description": "Deletar empresa"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "socio",
+			"item": [
+				{
+					"name": "Create socio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Socio 2\",\r\n    \"cpf\": \"12345678913\",\r\n    \"empresa\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/socio/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"socio",
+								"new"
+							]
+						},
+						"description": "Criar sócio"
+					},
+					"response": []
+				},
+				{
+					"name": "Get socios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/socio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"socio"
+							]
+						},
+						"description": "Get sócios"
+					},
+					"response": []
+				},
+				{
+					"name": "Get socio by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/socio/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"socio",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update socio",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Socio 1 edited\",\r\n    \"cpf\": \"12345678912\",\r\n    \"empresa\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/socio/1/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"socio",
+								"1",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete socio by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/socio/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"socio",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+<div class="socio-container">
+  <h2>Sócios</h2>
+
+  <form (submit)="isEditing ? updateSocio() : createSocio()">
+    <div class="form-group">
+      <label for="name">Nome do Sócio</label>
+      <input type="text" id="name" [(ngModel)]="socio.nome" name="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="cpf">CPF do Sócio</label>
+      <input type="text" id="cpf" maxlength="11" [(ngModel)]="socio.cpf" name="cpf" required>
+    </div>
+
+    <div class="form-group">
+      <label for="empresa">Empresa ID</label>
+      <select name="empresa" id="empresa" [(ngModel)]="socio.empresa" >
+        <option value="0">Selecione uma empresa</option>
+        <option *ngFor="let empresa of empresas" [value]="empresa.id">{{ empresa.nome }}</option>
+      </select>
+    </div>
+
+    <button type="submit" class="submit-btn">{{ isEditing ? 'Atualizar' : 'Criar' }} Sócio</button>
+    <button type="button" *ngIf="isEditing" class="cancel-btn" (click)="resetForm()">Cancelar</button>
+  </form>
+
+  <h3>Lista de sócios</h3>
+  <ul class="socio-list">
+    <li *ngFor="let socio of socios">
+      <span class="socio-info">{{ socio.nome }} - CPF: {{ socio.cpf }} - Empresa: {{ socio.empresa.nome }}</span>
+      <div class="socio-actions">
+        <button class="edit-btn" (click)="editSocio(socio)">Editar</button>
+        <button class="delete-btn" (click)="deleteSocio(socio.id)">Excluir</button>
+      </div>
+    </li>
+  </ul>
+</div>

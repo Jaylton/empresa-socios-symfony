@@ -1,0 +1,45 @@
+
+services:
+###> doctrine/doctrine-bundle ###
+  database:
+    image: bitnami/postgresql:latest
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRESQL_USERNAME=docker
+      - POSTGRESQL_PASSWORD=docker
+      - POSTGRESQL_DATABASE=empresasocios
+###< doctrine/doctrine-bundle ###
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+    environment:
+      DATABASE_URL: postgresql://docker:docker@database:5432/empresasocios
+      APP_ENV: prod
+    volumes:
+      - ./backend:/var/www/backend
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    command: npm start -- --host 0.0.0.0 --poll 2000
+
+volumes:
+###> doctrine/doctrine-bundle ###
+  database_data:
+###< doctrine/doctrine-bundle ###
